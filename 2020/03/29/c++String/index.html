@@ -151,12 +151,57 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >第一个尝试</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://c.biancheng.net/uploads/allimg/181113/2-1Q113105511K7.gif);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >c++String</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                
+                <h3 id="char储存"><a href="#char储存" class="headerlink" title="char储存"></a>char储存</h3><ol>
+<li>末尾<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">3</span>] = <span class="string">"asd"</span>；</span><br><span class="line">字符串的末尾是<span class="string">'\0'</span></span><br></pre></td></tr></table></figure></li>
+<li>常见函数：<table>
+<thead>
+<tr>
+<th align="left">函 数</th>
+<th align="left">描述</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">strclen</td>
+<td align="left">接收一个 C 字符串作为实参。返回 C 字符串的长度（不包括 null 终止符)。</td>
+<td align="left">len = strlen(name);</td>
+</tr>
+<tr>
+<td align="left">strcat</td>
+<td align="left">接收两个 C 字符串作为实参。该函数将第二个字符串的内容附加到第一个 C 字符串 (第一个字符串被改变，第二个字符串保持不变)。</td>
+<td align="left">strcat(string1, string2);</td>
+</tr>
+<tr>
+<td align="left">strcpy</td>
+<td align="left">接收两个 C 字符串作为实参。该函数将第二个 C 字符串复制到第一个 C 字符串。第 二个 C 字符串保持不变。</td>
+<td align="left">strcpy(string1, string2);</td>
+</tr>
+<tr>
+<td align="left">strcmp</td>
+<td align="left">接收两个 C 字符串实参。如果 string1 和 string2 相同，则该函数返回 0；如果 string2 按字母顺序大于 string1，则返回负数；如果 string2 按字母顺序小于 string1，则返回 一个正数。</td>
+<td align="left">if (strcmp(string1, string2))</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="STL标准库中string"><a href="#STL标准库中string" class="headerlink" title="STL标准库中string"></a>STL标准库中string</h3><ol>
+<li>初始化<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s1</span><span class="params">()</span></span>;  <span class="comment">// si = ""</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s2</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;  <span class="comment">// s2 = "Hello"</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s3</span><span class="params">(<span class="number">4</span>, <span class="string">'K'</span>)</span></span>;  <span class="comment">// s3 = "KKKK"</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s4</span><span class="params">(<span class="string">"12345"</span>, <span class="number">1</span>, <span class="number">3</span>)</span></span>;  <span class="comment">//s4 = "234"，即 "12345" 的从下标 1 开始，长度为 3 的子串</span></span><br></pre></td></tr></table></figure></li>
+<li>赋值<ul>
+<li>可以直接‘=’赋值</li>
+<li>使用assign()函数赋值<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> string s1("12345"), s2;</span><br><span class="line">s3.assign(s1);  <span class="comment">// s3 = s1</span></span><br><span class="line">s2.assign(s1, <span class="number">1</span>, <span class="number">2</span>);  <span class="comment">// s2 = "23"，即 s1 的子串(1, 2)</span></span><br><span class="line">s2.assign(<span class="number">4</span>, <span class="string">'K'</span>);  <span class="comment">// s2 = "KKKK"</span></span><br><span class="line">s2.assign(<span class="string">"abcde"</span>, <span class="number">2</span>, <span class="number">3</span>);  <span class="comment">// s2 = "cde"，即 "abcde" 的子串(2, 3)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>length 和 size 都可以返回长度</li>
+<li>字符串的拼接<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string s1("123"), s2("abc");</span><br><span class="line">s1.append(s2);  <span class="comment">// s1 = "123abc"</span></span><br><span class="line">s1.append(s2, <span class="number">1</span>, <span class="number">2</span>);  <span class="comment">// s1 = "123abcbc"</span></span><br><span class="line">s1.append(<span class="number">3</span>, <span class="string">'K'</span>);  <span class="comment">// s1 = "123abcbcKKK"</span></span><br><span class="line">s1.append(<span class="string">"ABCDE"</span>, <span class="number">2</span>, <span class="number">3</span>);  <span class="comment">// s1 = "123abcbcKKKCDE"，添加 "ABCDE" 的子串(2, 3)</span></span><br></pre></td></tr></table></figure></li>
+<li>字符串的比较<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string s1("hello"), s2("hello, world");</span><br><span class="line"><span class="keyword">int</span> n = s1.compare(s2);</span><br><span class="line">n = s1.compare(<span class="number">1</span>, <span class="number">2</span>, s2, <span class="number">0</span>, <span class="number">3</span>);  <span class="comment">//比较s1的子串 (1,2) 和s2的子串 (0,3)</span></span><br><span class="line">n = s1.compare(<span class="number">0</span>, <span class="number">2</span>, s2);  <span class="comment">// 比较s1的子串 (0,2) 和 s2</span></span><br><span class="line">n = s1.compare(<span class="string">"Hello"</span>);</span><br><span class="line">n = s1.compare(<span class="number">1</span>, <span class="number">2</span>, <span class="string">"Hello"</span>);  <span class="comment">//比较 s1 的子串(1,2)和"Hello”</span></span><br><span class="line">n = s1.compare(<span class="number">1</span>, <span class="number">2</span>, <span class="string">"Hello"</span>, <span class="number">1</span>, <span class="number">2</span>);  <span class="comment">//比较 s1 的子串(1,2)和 "Hello" 的子串(1,2)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
             </div>
 
             <!-- Post Comments -->
@@ -218,8 +263,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/03/27/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%9D%E8%AF%95/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2020/03/27/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%9D%E8%AF%95/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2020/03/29/c++String/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/03/29/c++String/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
