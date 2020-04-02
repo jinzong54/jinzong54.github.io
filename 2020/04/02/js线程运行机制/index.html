@@ -151,12 +151,47 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://c.biancheng.net/uploads/allimg/181113/2-1Q113105511K7.gif);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >c++String</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1092670156,2418096597&amp;fm=26&amp;gp=0.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >JS线程运行机制</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;空格进行分割</span><br><span class="line">using namespace std;</span><br><span class="line">#include&lt;iostream&gt;;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  string a;</span><br><span class="line">  getline(cin,a);</span><br><span class="line">  string b &#x3D; a;</span><br><span class="line">  b.insert(b.begin(),&#39;|&#39;);</span><br><span class="line">  b.push_back(&#39;|&#39;);</span><br><span class="line">  cout&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">  int eindex&#x3D;0;</span><br><span class="line">  int sindex&#x3D;0;</span><br><span class="line">  for(int i&#x3D;0;i&lt;a.size();i++)&#123;</span><br><span class="line">    if(a[i]!&#x3D;&#39; &#39;)&#123;sindex &#x3D; i;break;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  for(int i&#x3D;a.size()-1;i&gt;0;i--)&#123;</span><br><span class="line">    if(a[i] !&#x3D;&#39; &#39;)&#123;eindex &#x3D; i;break;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  cout&lt;&lt;&quot;|&quot;;</span><br><span class="line">  for(int i&#x3D;0;i&lt;a.size();i++)&#123;</span><br><span class="line">    if(i&gt;&#x3D;sindex &amp;&amp; i&lt;&#x3D;eindex)&#123;</span><br><span class="line">        if(a[i]!&#x3D;&#39; &#39;)&#123;cout&lt;&lt;a[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;cout&lt;&lt;a[i];&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  cout&lt;&lt;&quot;|&quot;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h3 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a>一、问题</h3><p>刚入坑js没几天就遇到如下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">     		setTimeout(<span class="built_in">console</span>.log(i),<span class="number">1000</span>);</span><br><span class="line">     	&#125;</span><br><span class="line">运行结果：<span class="number">10</span>个<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h3 id="二：异步理解"><a href="#二：异步理解" class="headerlink" title="二：异步理解"></a>二：异步理解</h3><p> js由于浏览器的本省的限制只有单线程，为了能像多线程一样提高运行效率，开发者在多线程中运用到异步。<br>来自百科：与同步相对应，异步指的是让CPU暂时搁置当前请求的响应,处理下一个请求,当通过轮询或其他方式得到回调通知后,开始运行。多线程将异步操作放入另一线程中运行，通过轮询或回调方法得到完成通知,但是完成端口，由操作系统接管异步操作的调度，通过硬件中断，在完成时触发回调方法，此方式不需要占用额外线程。<br>异步比喻：在写作业的，从第一题到最后一题，先最流畅的完成最简单的题目，讲耗时的题目排成队留到最后来写。</p>
+<h3 id="三、js如何处理异步"><a href="#三、js如何处理异步" class="headerlink" title="三、js如何处理异步"></a>三、js如何处理异步</h3><p>在js中将一个线程任务划分成：同步（Synchronous）和异步（Asynchronous）</p>
+<ul>
+<li>1.同步（synchronous）：线程运行方式，就是代码的预先处理好的顺序，一步一步的按顺序执行，遇到不需要异步的回调函数（由回调函数定义可推导，并非全是异步），执行完回调函数再执行接下来的程序。</li>
+<li>2.异步：当遇到需要异步的回调函数，将该任务排入队伍进入等待。</li>
+</ul>
+<p>当先线程开始，同步任务开始，一步步不断执行形成一个执行栈（execution contact stack）当遇到遇到异步任务的时候，将一个个的异步任务排成队放入”任务队列”（task queue），任务队列在执行栈中插入询问，查询是否可以执行任务队列。</p>
+<ul>
+<li><img src="/2020/04/02/js%E7%BA%BF%E7%A8%8B%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/1.png" alt></li>
+</ul>
+<h3 id="常见异步回调函数"><a href="#常见异步回调函数" class="headerlink" title="常见异步回调函数"></a>常见异步回调函数</h3><ul>
+<li><ol>
+<li>setTimeout和setlnterval</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>DOM事件</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>ES6中的Promise</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>Ajax异步请求</li>
+</ol>
+</li>
+</ul>
+<p>回到最开始的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">     		setTimeout(<span class="built_in">console</span>.log(i),<span class="number">1000</span>);</span><br><span class="line">     	&#125;</span><br></pre></td></tr></table></figure>
+<p>进入for循环，第一开始就遇到settimeout，由于函数本身，过1000ms后才会将<code>console.log(i)</code>送入任务列队，此外i的值不断发生变化到10个循环结束后，i的值变成了10，任务列队的10个<code>console.log(i)</code>才开始执行。所以结果是10个10</p>
+<h3 id="如何处理该问题"><a href="#如何处理该问题" class="headerlink" title="如何处理该问题"></a>如何处理该问题</h3><p>使用立即函数进行包裹：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">命名函数：</span><br><span class="line"><span class="keyword">var</span> show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">       		setTimeout(<span class="built_in">console</span>.log(i),<span class="number">1000</span>);</span><br><span class="line">       	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">show();</span><br></pre></td></tr></table></figure>
+<p>由于该函数特性，settimeout不会进入任务队列，就不会出存在计时效果。<br>下篇将深入讲解异步对定义函数，声明函数处理</p>
 
             </div>
 
@@ -219,8 +254,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/03/29/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E5%89%B2/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2020/03/29/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E5%89%B2/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2020/04/02/js%E7%BA%BF%E7%A8%8B%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/04/02/js%E7%BA%BF%E7%A8%8B%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

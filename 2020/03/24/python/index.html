@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/%E5%B9%B2%E8%B4%A7/">干货</a></li><li><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+	                        <a class="category-link" href="/categories/%E5%B9%B2%E8%B4%A7/">干货</a></li><li><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li><a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">问题总结</a>
 	                    </ul>
 	        </li>
 	        
@@ -178,16 +178,16 @@
 <li>局部变量优先于全局变量</li>
 </ol>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---使用 <span class="keyword">global</span> a =<span class="number">100</span> 从内部取改变全局变量的值</span><br><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">2</span>  </span><br><span class="line">func()</span><br><span class="line">print(a)====&gt;结果为1</span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">---------------------------------------------------------------------</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">2</span></span><br><span class="line">func()</span><br><span class="line">print(a) ====&gt;2</span><br></pre></td></tr></table></figure>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>变量中实际储存的是对象的地址，变量通过地址引用了“对象<br>变量位于：栈<br>对象位于：堆”<br><img src="python/1.png" alt=""><br>Python是动态类型的语言<br>    变量不需要显示声明类型。根据变量引用的对象，python解释器自动确定数据类型<br>Python是强类型语言<br>    每个对象都有数据类型，只支持该类型的操作</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>变量中实际储存的是对象的地址，变量通过地址引用了“对象<br>变量位于：栈<br>对象位于：堆”<br><img src="/2020/03/24/python/1.png" alt><br>Python是动态类型的语言<br>    变量不需要显示声明类型。根据变量引用的对象，python解释器自动确定数据类型<br>Python是强类型语言<br>    每个对象都有数据类型，只支持该类型的操作</p>
 <h3 id="删除变量和垃圾回收机制"><a href="#删除变量和垃圾回收机制" class="headerlink" title="删除变量和垃圾回收机制"></a>删除变量和垃圾回收机制</h3><p>A=13<br>del A<br>A就栈空间被删除，同时堆空间的13被自带的垃圾回收器回收（by某种算法）</p>
 <h3 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h3><ol start="0">
 <li><p>```<br>链式赋值：<br>a ,b, c=10,50,100<br>解包赋值：a，b=b，a</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> 1. &#96; + - * &#x2F;&#96;:加减乘除</span><br><span class="line"> 2. &#96;&#x2F;&#x2F;  %  **&#96;:整除，取模，幂</span><br><span class="line">![](python&#x2F;2.png)</span><br><span class="line"> 3. 整数与浮点数混合相加时，自动转化为浮点型。Python3 int可以取任意大小，事宜做超大数的运算</span><br><span class="line"> 4.</span><br><span class="line"> &#96;&#96;&#96;python</span><br><span class="line"> round(value)#可以返回四舍五入的值，不改变原有的值</span><br></pre></td></tr></table></figure></li>
-<li><p>自运算符<br><img src="python/3.png" alt=""></p>
+<li><p>自运算符<br><img src="/2020/03/24/python/3.png" alt></p>
 </li>
 <li><p>在python中没有布尔类型用‘0 ’与 ‘1 ’表示，’False’ 与 ‘True’</p>
 </li>
-<li><p>逻辑运算符<br><img src="python/4.png" alt=""></p>
+<li><p>逻辑运算符<br><img src="/2020/03/24/python/4.png" alt></p>
 </li>
 </ol>
 <h3 id="时间表示"><a href="#时间表示" class="headerlink" title="时间表示"></a>时间表示</h3><ol>
