@@ -157,7 +157,7 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p>具体可查询文档：<a href="https://www.w3school.com.cn/dhtml/index.asp" target="_blank" rel="noopener">https://www.w3school.com.cn/dhtml/index.asp</a></p>
-<h3 id="创建一个节点"><a href="#创建一个节点" class="headerlink" title="创建一个节点"></a>创建一个节点</h3><p> 主要使用方法：</p>
+<h3 id="一、创建一个节点："><a href="#一、创建一个节点：" class="headerlink" title="一、创建一个节点："></a>一、创建一个节点：</h3><p> 主要使用方法：</p>
 <ul>
 <li><code>document.body</code>：获取一个body元素</li>
 <li><code>getElementsById(&quot;ID&quot;)</code> ：获取一个ID为ID的元素</li>
@@ -167,14 +167,21 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> body = <span class="built_in">document</span>.body; <span class="comment">//获取body对象节点</span></span><br><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.createElement(<span class="string">"ul"</span>); <span class="comment">//创建一个ul节点</span></span><br><span class="line"><span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>); <span class="comment">//创建一个li节点</span></span><br><span class="line"><span class="keyword">var</span> txt = <span class="built_in">document</span>.createTextNode(<span class="string">"5555"</span>); <span class="comment">//创建文本叶子节点</span></span><br><span class="line">li.appendChild(txt); <span class="comment">// 将文本节点放在li节点下</span></span><br><span class="line">ul.appendChild(li);  <span class="comment">//将li节点放在ul节点下</span></span><br><span class="line">body.appendChild(ul);<span class="comment">//将ul放在body节点下</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>主要方法：</p>
+<h3 id="二、删除节点："><a href="#二、删除节点：" class="headerlink" title="二、删除节点："></a>二、删除节点：</h3><p>主要方法：</p>
 <ul>
-<li><p><code>父节点.removeChild(子节点对象)</code> ：删除子节点</p>
-</li>
-<li><p><code>节点.remove()</code>：删除节点w</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> o = <span class="built_in">document</span>.getElementById(a); <span class="comment">// 获取id为a的节点</span></span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.body; <span class="comment">//获取body节点</span></span><br><span class="line">body.removeChild(o); <span class="comment">//移除</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><code>父节点.removeChild(子节点对象)</code> ：删除子节点</li>
+<li><code>节点.remove()</code>：删除节点w</li>
 </ul>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> o = <span class="built_in">document</span>.getElementById(a); <span class="comment">// 获取id为a的节点</span></span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.body; <span class="comment">//获取body节点</span></span><br><span class="line">body.removeChild(o); <span class="comment">//移除</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="三、修改节点："><a href="#三、修改节点：" class="headerlink" title="三、修改节点："></a>三、修改节点：</h3><p>创建一片节点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;   -----》以div作为祖先元素</span><br><span class="line">  &lt;p&gt;子节点&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p&gt;后代节点&lt;/</span>p&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>经过测试，设置ID获取对象再进行修改方式最佳，不然整体逻辑复杂。</li>
+</ul>
+<h3 id="四、创建样式表："><a href="#四、创建样式表：" class="headerlink" title="四、创建样式表："></a>四、创建样式表：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.setAttribute(<span class="string">'style'</span>,<span class="string">'width: 200px; background:seashell;height: 200px; border: 2px outset seashell; position:absolute; left: 600px;'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>对于js创建的button对象，onclick属性需要使用命名函数方式赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">button1.onclick = <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> p = div.firstElementChild;</span><br><span class="line">				p.innerHTML = txt.value;</span><br><span class="line">				txt.remove();</span><br><span class="line">				button1.remove();</span><br><span class="line">				div.remove();</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
 
             </div>
 
