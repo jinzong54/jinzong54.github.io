@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Jinzong53</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/%E5%B9%B2%E8%B4%A7/">干货</a></li><li><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li><a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">问题总结</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Request和Resphond</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h3 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h3><p> 客户端向服务器接收请求，服务器将会为请求开辟一个新的线程，服务器将请求封装交成request（request是请求的载体），同时还会创建respond对象，如果需要还可发回给客户端。服务将request交给Servlet处理，将处理结果交给respond，重新发回客户端。</p>
+<h3 id="大致概念"><a href="#大致概念" class="headerlink" title="大致概念"></a>大致概念</h3><p> ServletRequest—–》与协议无关的Request<br> ServletResponse——》与协议无关的Respond</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li>sendError(int sc):<pre><code>Sends an error response to the client using the specified status code and clearing the buffer.</code></pre></li>
+<li>sendError(int sc, java.lang.String msg):<pre><code>Sends an error response to the client using the specified status.</code></pre></li>
+<li>setHeader(java.lang.String name, java.lang.String value):<pre><code>Sets a response header with the given name and value.</code></pre></li>
+<li>addHeader(java.lang.String name, java.lang.String value):设置多值响应头Adds a response header with the given name and value.</li>
+<li>setDateHeader(java.lang.String name, long date)<pre><code>Sets a response header with the given name and date-value.</code></pre></li>
+</ul>
+<h3 id="常用响应头："><a href="#常用响应头：" class="headerlink" title="常用响应头："></a>常用响应头：</h3><ul>
+<li><p>Location（重定向）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 重定向的必须是网址，称为请求ui</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line">response.setHeader(<span class="string">"Location"</span>, <span class="string">"/day06/Cservlet"</span>);</span><br><span class="line">response.setStatus(<span class="number">302</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快捷重定向</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(&quot;day06&#x2F;Cservlet&quot;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li>refresh(定向刷新页面)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 发送一个响应体</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line">PrintWriter writer = response.getWriter();</span><br><span class="line">writer.print(<span class="string">"欢迎xxx登入！5秒后自动跳转"</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 设置名为Refresh的响应头</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line">response.setHeader(<span class="string">"Refresh"</span>, <span class="string">"5;URL=/day06/Cservlet"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>缓存禁用<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 禁用浏览器缓存</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line">response.setHeader(<span class="string">"Cache-Control"</span>, <span class="string">"no-cahe"</span>);</span><br><span class="line">response.setHeader(<span class="string">"expires"</span>, <span class="string">"0"</span>);</span><br><span class="line">response.setHeader(<span class="string">"pragma"</span>, <span class="string">"no-cahe"</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>response的两个流：<ul>
+<li>ServletOutputStrem ： 发送字节<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  String a = <span class="string">"Hello outputStream"</span>;</span><br><span class="line"><span class="keyword">byte</span>[] bytes = a.getBytes();</span><br><span class="line">response.getOutputStream().write(bytes);</span><br></pre></td></tr></table></figure></li>
+<li>PrintWrite ： 发送字符</li>
+</ul>
+</li>
+</ul>
+<h3 id="请求头处理-对于请求头的值，一般不能修改"><a href="#请求头处理-对于请求头的值，一般不能修改" class="headerlink" title="请求头处理:对于请求头的值，一般不能修改"></a>请求头处理:对于请求头的值，一般不能修改</h3><ul>
+<li>String getHeader(String name) 适用于单值头</li>
+<li>int getIntHeader(String name); 自动转化为int</li>
+<li>get getDateHeader(String name) 自动转化Date类型</li>
+<li>Enumeration<String> getHeaders（String name），适用于多值头</String></li>
+<li>getScheme() : 返回String 协议名称</li>
+<li>getServerName(): 返回String 服务器名称</li>
+<li>getServerPort(): 返回端口号</li>
+<li>getContextPath(): return project’name.</li>
+<li>getServletPath(): return mapping-patten’s URL</li>
+<li>getQueryString(): 获取参数部分。username=xxx&amp;password=xxxx;</li>
+<li>getRequestURI ：没有前面端口域名部分的</li>
+<li>getRequestURL ：获取完整路径</li>
+</ul>
+<h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><ul>
+<li>Referer :<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String referer = request.getHeader(<span class="string">"Referer"</span>);</span><br><span class="line">	System.out.println(referer);</span><br><span class="line">   使用浏览器直接访问的为<span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="获取参数GET-和-POST参数，均一致，一样可能存在一键对多值的情况"><a href="#获取参数GET-和-POST参数，均一致，一样可能存在一键对多值的情况" class="headerlink" title="获取参数GET 和 POST参数，均一致，一样可能存在一键对多值的情况"></a>获取参数GET 和 POST参数，均一致，一样可能存在一键对多值的情况</h3><ul>
+<li>String getParameter（String name）：从name获取值，一键一值的情况</li>
+<li>String[] getParameterValues(String name) : 一键多值的情况</li>
+<li>Enumeration<String>  getParameterNames():获取所有的的键值</String></li>
+<li>Map&lt;String,String[]&gt; getParameterMap():获取所有键值对<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">String password = request.getParameter(<span class="string">"password"</span>);</span><br><span class="line">String[] hobby = request.getParameterValues(<span class="string">"hobby"</span>);</span><br><span class="line">  <span class="comment">//或者</span></span><br><span class="line">  Map&lt;String, String[]&gt; map = request.getParameterMap();</span><br><span class="line"><span class="keyword">for</span> (String string : map.keySet()) &#123;</span><br><span class="line">	String[] value = map.get(string);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;value.length;i++)&#123;</span><br><span class="line">		System.out.println(value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="请求转发和请求包含"><a href="#请求转发和请求包含" class="headerlink" title="请求转发和请求包含"></a>请求转发和请求包含</h3><p> RequestDispatcher rd = request.getRequestDispatcher(“/Myservlet”);<br> 请求转发：rd.forward(request,response);由下一个Servlet完成留头不留体。浏览器只是对第一个Servlet请求，并没有对访问转发的第二个发送请求。<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.getRequestDispatcher(<span class="string">"/Bservlet"</span>).forward(request, response);</span><br></pre></td></tr></table></figure></p>
+<p> 请求包含：rd.include(request,response);由两个Servet完成响应头都留<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RequestDispatcher rd  =request.getRequestDispatcher(<span class="string">"/Bservlet"</span>);</span><br><span class="line">	 rd.include(request, response);</span><br></pre></td></tr></table></figure></p>
+<h3 id="request域：域中只有方法，没有参数，一般是在需要，转发或包含才使用到"><a href="#request域：域中只有方法，没有参数，一般是在需要，转发或包含才使用到" class="headerlink" title="request域：域中只有方法，没有参数，一般是在需要，转发或包含才使用到"></a>request域：域中只有方法，没有参数，一般是在需要，转发或包含才使用到</h3><p> Servlet中三大与对象：request，session，application</p>
+<ul>
+<li>void seyAttribute(String name,Object value);</li>
+<li>Object get Attribuute(String name);</li>
+<li>void removeAttribute(String name);<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"请求包含的Aservet被请求"</span>);</span><br><span class="line">	 RequestDispatcher rd  =request.getRequestDispatcher(<span class="string">"/Bservlet"</span>);</span><br><span class="line">	 request.setAttribute(<span class="string">"aa"</span>, <span class="string">"aa"</span>);</span><br><span class="line">	 rd.include(request, response);</span><br><span class="line">	response.getWriter().write(<span class="string">"   i am form Aservlet"</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="重定向与转发包含的区别"><a href="#重定向与转发包含的区别" class="headerlink" title="重定向与转发包含的区别"></a>重定向与转发包含的区别</h3><p> 重定向：当浏览器请求一个网站后，服务器会发送一个响应头Loation，浏览器会提取Location的值，对Location的值发出请求。一共有两个请求</p>
+<h3 id="reponse解决乱码问题"><a href="#reponse解决乱码问题" class="headerlink" title="reponse解决乱码问题"></a>reponse解决乱码问题</h3><p> 国际将iso8859-1（只支持拉丁文）规定服务器为默认的解码方式，发送给浏览器也是用iso8859-1解码成字节流后，发送给浏览器，浏览器的默认解码方式是GBK导致错误</p>
+<ul>
+<li>response.setCharaterEncoding(“utf-8”) –只是设置发出去的为utf-8编码的字节流</li>
+<li>response.setHeader(“Contebt-Type”,”text/html;charset=utf-8”);不仅告诉浏览器我的编码是utf-8，同时设置了我的编码方式是utf-8</li>
+<li>response.setContenType(“text/html;charset=utf-8”)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//一般放方法最前面</span></span><br><span class="line"> response.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="request解决乱码问题"><a href="#request解决乱码问题" class="headerlink" title="request解决乱码问题"></a>request解决乱码问题</h3>一般网页都会在mate标签里面设置，传输给服务器是utf-8处理的数据，tomcat会直接将提交的数据变成iso8859-1编码。</li>
+<li>对于post解决方案：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> GET:</span><br><span class="line"> String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">		<span class="keyword">byte</span>[] bytes = username.getBytes(<span class="string">"iso-8859-1"</span>);</span><br><span class="line">		username  = <span class="keyword">new</span> String(bytes, <span class="string">"utf-8"</span>);</span><br><span class="line">		System.out.println(<span class="string">"我是GET"</span>+username);</span><br><span class="line">POST:</span><br><span class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">  String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">  System.out.println(<span class="string">"我是POST"</span>+username);</span><br></pre></td></tr></table></figure>
+<h3 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h3></li>
+<li></li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/04/10/Rquest%E5%92%8CRespond/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/04/10/Rquest%E5%92%8CRespond/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " target="_blank" rel="noopener" style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

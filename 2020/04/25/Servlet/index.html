@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Jinzong53</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/%E5%B9%B2%E8%B4%A7/">干货</a></li><li><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li><a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">问题总结</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Servlet</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>服务器中有多个Servlet，每一个servlet都是唯一的，它们能处理客户端的请求都是不同的。</p>
+<ul>
+<li>接收请求</li>
+<li>处理请求</li>
+<li>完成请求<br>客户端发出登入请求，或者输出注册请求，这些请求都应该有servlet完成。servlet需要我们自己编写，每一个servlet必须实现<code>javax.servlet.Servlet</code>接口</li>
+</ul>
+<p>特性：</p>
+<ul>
+<li>单例 ：一个类只有一个对象；当然可以存在多个Servlet类</li>
+<li>线程不安全，但效率高</li>
+<li>servlet创建顺序由<code>&lt;load-on-startup&gt;0&lt;/load-on-startup&gt;</code>决定，在web.xml中设置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line"> &lt;servelt-name&gt;XXX&lt;&#x2F;servelt-name&gt;</span><br><span class="line"> &lt;servelt-class&gt;servlet的类的相对路径&lt;&#x2F;servelt-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;0&lt;&#x2F;load-on-startup&gt;</span><br><span class="line">&lt;&#x2F;servlet&gt;</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line"> &lt;servelt-name&gt;XXX&lt;&#x2F;servelt-name&gt;</span><br><span class="line"> &lt;servelt-class&gt;servlet的类的相对路径&lt;&#x2F;servelt-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;&#x2F;load-on-startup&gt;</span><br><span class="line">&lt;&#x2F;servlet&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>创建时间点：</p>
+<ul>
+<li>可以在启动服务器就立刻创建</li>
+<li>避免方法：</li>
+<li>尽量少创建成员</li>
+<li>创建无状态成员 （主要看对象也没有成员变量）</li>
+<li>可以有状态成员 （对于成员变量的只有get方法）</li>
+</ul>
+<h3 id="实现接口的类"><a href="#实现接口的类" class="headerlink" title="实现接口的类"></a>实现接口的类</h3><p>  sun公司提供了：GenericServlet ，HttpServlet实现了Servlet接口</p>
+<h3 id="如何实现Servlet接口创造子类"><a href="#如何实现Servlet接口创造子类" class="headerlink" title="如何实现Servlet接口创造子类"></a>如何实现Servlet接口创造子类</h3><p> 必须实现的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Header One</th>
+<th align="left">Header Two</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">void</td>
+<td align="left">destroy()：Called by the servlet container to indicate to a servlet that the servlet is being taken out of service.</td>
+</tr>
+<tr>
+<td align="left">ServletConfig</td>
+<td align="left">getServletConfig()：Returns a ServletConfig object, which contains initialization and startup parameters for this servlet.</td>
+</tr>
+<tr>
+<td align="left">java.lang.String</td>
+<td align="left">getServletInfo()： Returns information about the servlet, such as author, version, and copyright.</td>
+</tr>
+<tr>
+<td align="left">void</td>
+<td align="left">init(ServletConfig config)：Called by the servlet container to indicate to a servlet that the servlet is being placed into service.</td>
+</tr>
+<tr>
+<td align="left">void</td>
+<td align="left">service(ServletRequest req, ServletResponse res)： Called by the servlet container to allow the servlet to respond to a request.</td>
+</tr>
+</tbody></table>
+<p>各方法含义：</p>
+<ul>
+<li>init(ServletConfig config) ：在实例化servlet后，即访问servlet就创建。servlet container只能立刻调用init方法一次。该方法一定要在servlet可以接收请求之前调用完成。属于生命周期方法。</li>
+<li>getServletConfig() ：返回的时ServletConfig接口对象，该对象包含此servlet的初始化和启动参数。返回的ServletConfig对象是传递给init方法的对象。包含了web.xml里面的<servlet>标签下的各类配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tomcat回返回ServletConfig接口的实现类</span><br><span class="line">实现类的API：</span><br><span class="line">getServletName()：Returns the name of this servlet instance.</span><br><span class="line">getServletContext()：Returns a reference to the ServletContext in which the caller is executing.</span><br><span class="line">getInitParameterNames()：获取初始化参数的名称</span><br><span class="line">getInitParameter(java.lang.String name)：通过名称获取指定初始化参数的值</span><br><span class="line"></span><br><span class="line">  System.out.println(s.getInitParameter(&quot;p1&quot;));</span><br><span class="line">System.out.println(s.getServletContext());</span><br><span class="line">Enumeration e &#x3D; s.getInitParameterNames();&#x2F;&#x2F;古早迭代器于iteration相似</span><br><span class="line">while(e.hasMoreElements())&#123;</span><br><span class="line">	System.out.println(e.nextElement());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></servlet></li>
+<li>getServletInfo() ：返回有关servlet的信息，一般返回的信息自定义</li>
+<li>service(ServletRequest req, ServletResponse res）：servlet处理请求的地方</li>
+<li>destroy() : 在servlet结束时，所有线程的终止，由Servlet container调用的方法。实际上，一般关闭流等操作一般不在该地进行</li>
+</ul>
+<h3 id="如何让浏览器访问servlet"><a href="#如何让浏览器访问servlet" class="headerlink" title="如何让浏览器访问servlet"></a>如何让浏览器访问servlet</h3><ul>
+<li>给Servlet指定一个路径：需要对web.xml中对Servlet进行配置<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--配置servlet--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>XXX<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>XXXservlet的类的路径<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--配置servlet基本信息，浏览器可以访问&lt;url-pattern&gt;中地址，再执行&lt;servlet&gt;--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>XXX<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>aa/bb/cc/MyServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>浏览器访问Servlet路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;项目名&#x2F;&lt;url-pattern&gt;aa&#x2F;bb&#x2F;cc&#x2F;MyServlet&lt;&#x2F;url-pattern配置的名称</span><br></pre></td></tr></table></figure></li>
+<li>访问servlet的过程：<br>浏览器得到servlet<url-pattern>的名称，发送请求到web.xml在<servlet-mapping>找到<servlet-name>，通过<servlet-name>再找到<servelt><servlet-class>，通过反射创建类，对象，方法</servlet-class></servelt></servlet-name></servlet-name></servlet-mapping></url-pattern></li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/04/25/Servlet/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/04/25/Servlet/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " target="_blank" rel="noopener" style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
