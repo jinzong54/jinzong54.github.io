@@ -156,7 +156,23 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h3 id="JSP（java-server-pages）来源"><a href="#JSP（java-server-pages）来源" class="headerlink" title="JSP（java server pages）来源"></a>JSP（java server pages）来源</h3><ul>
+                <h3 id="域概念"><a href="#域概念" class="headerlink" title="域概念"></a>域概念</h3><p>Servlet中三大域对象（request，session，ServletConetext（整个程序）），JSP四大域对象多一个pageContext</p>
+<h3 id="九大内置对象"><a href="#九大内置对象" class="headerlink" title="九大内置对象"></a>九大内置对象</h3><ul>
+<li>out:jsp的输出流，用于向客户端响应</li>
+<li>page：当前jsp对象，他的引用类型是object（当前页面）</li>
+<li>config：对应的真身中的ServletConfig对象</li>
+<li>pageContext：一个顶九个（一个页面一个pageContext）可以跨域共享数据<ul>
+<li>域对象</li>
+<li>可以代理其他域pageConetext(“xxx”,”xxx”,pageContext.SESSION.SCOPE)</li>
+<li>全域查找：pageConext.findAttribute(“xx”);从小域到大域</li>
+</ul>
+</li>
+<li>request：</li>
+<li>response：</li>
+<li>session：</li>
+<li>application：</li>
+</ul>
+<h3 id="JSP（java-server-pages）来源"><a href="#JSP（java-server-pages）来源" class="headerlink" title="JSP（java server pages）来源"></a>JSP（java server pages）来源</h3><ul>
 <li>作用：本质也是功能更加强大的Servlet<ul>
 <li>对于Servlet:不适合设置html响应体，需要大量的response.getWriter().print(“<html>“)</html></li>
 </ul>
@@ -192,6 +208,31 @@
 </li>
 </ul>
 <h3 id="生命周期问题"><a href="#生命周期问题" class="headerlink" title="生命周期问题"></a>生命周期问题</h3><p>JSP页面的生命周期：如Servlet的周期<br>我们假设要访问的jsp页面是index.jsp。<br>首先，用户发出请求index.jsp；<br>服务器会判断是否是第一次请求：<br>如果是的话，JSP引擎会把该JSP文件转换成为一个Servlet，生成字节码文件，并执行_jspInit()；<br>如果不是的话，JSP将会访问已生成的字节码文件，解析执行_jspServlet()方法。<br>jspService()方法被调用来处理客户端的请求。对每一个请求，JSP引擎创建一个新的线程来处理该请求。如果有多个客户端同时请求该JSP文件，则JSP引擎会创建多个线程。每个客户端勇士请求该JSP文件，则JSP引擎会创建多个线程。每个客户端请求对应一个线程。以多线程方式执行可以大大降低对系统的资源需求，提高系统的并发量及响应时间。但也要注意多线程的编程带来的同步问题，由于该Servlet始终驻于内存，所以响应是非常快的。</p>
+<h3 id="JSP指令"><a href="#JSP指令" class="headerlink" title="JSP指令"></a>JSP指令</h3><p>一个jsp页面中可以拥有0-N个指令<br><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;</code></p>
+<h4 id="page-–杂七杂八"><a href="#page-–杂七杂八" class="headerlink" title="page    –杂七杂八"></a>page    –杂七杂八</h4><ul>
+<li>pageEncoding：在服务器把jsp编译成.java文件编码的方式(一般都是默认设置)</li>
+<li>contentType: 页面的编码方式 等同于 request.setContentType</li>
+<li>import: 由于导包，可以多次出现在不同地方</li>
+<li>errorPage：当页面出错时候的跳转页面<code>errorPage=&quot;other.jsp&quot;</code>，地址栏不会发生改变，底层属于请求转发</li>
+<li>isErrorPage: 可以当前页面为错误页面，当该属性为true时候，会设置状态码为500！而且这个页面可以使用9大内置对象中exception。<code>exception.printStackTrace();</code> (并不是所有的jsp都可以调用exception除非<code>isErrorPage=&quot;true&quot;</code>)</li>
+<li>autoFlush: 指定jsp的输出缓冲流满时，是否自动刷新！默认为true，如果为false，缓冲区抛异常</li>
+<li>buffer：指定缓冲区大小，默认为8KB</li>
+<li>language：指定编写语言，没更新出其他</li>
+<li>info：信息</li>
+<li>isTreadSafe：是否支持并发访问</li>
+<li>session：当前页面是否支持session，如果没false，那么当期页面就没有session对象</li>
+<li>extends：让jsp生成的servlet去继承指定父类</li>
+</ul>
+<h4 id="include-–静态包含"><a href="#include-–静态包含" class="headerlink" title="include –静态包含"></a>include –静态包含</h4><ul>
+<li>与RequestDispatcher的include()方法功能相似</li>
+<li>&lt;%@include%&gt;他是在jsp编译成java文件时完成的！他们共同生成一个java文件，然后生成class</li>
+<li>RequestDispatcher的include()是一个方法，包含和被被包含是两个servlet，共同执行</li>
+<li>往往把被包含jsp放一些不变的东西如 page import<h4 id="taglib-–导入标签"><a href="#taglib-–导入标签" class="headerlink" title="taglib  –导入标签"></a>taglib  –导入标签</h4></li>
+<li>perfix：指定标签在本页的前缀，由我们自己起名字</li>
+<li>url：指定标签库的位置</li>
+<li>&lt;%@taglib prefix=”s” url=”/struts-tags”%&gt; &lt;s:text&gt;</li>
+</ul>
+<h3 id="JSP动作标签"><a href="#JSP动作标签" class="headerlink" title="JSP动作标签"></a>JSP动作标签</h3><p>这些jsp的动作标签，与html提供的标签有本质区别</p>
 
             </div>
 

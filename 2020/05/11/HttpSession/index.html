@@ -174,8 +174,19 @@
 <li>相关域方法<ul>
 <li><code>void setAttribute(String name,Objetc value)</code></li>
 <li><code>Object getAttribute(String name)</code></li>
-<li><code>void removeAttribute(String name)</code></li>
+<li><code>void removeAttribute(String name)</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.setAttribute(<span class="string">"username"</span>, <span class="string">"jinzong54"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="session原理"><a href="#session原理" class="headerlink" title="session原理"></a>session原理</h3>在浏览器访问服务器的时候，服务器在本地创建一个cookie，里面储存的一个JSEESIONID，不创建新会话的时候，保存JSEESIONID的cookie一直活着（不活动默认的时间是30分钟）。</li>
 </ul>
+</li>
+<li>服务器通过sessionid可以取出session里面的值</li>
+<li>request.getSession(false):如果缓存中cookie-jsessionid</li>
+<li>invalidate(),使session死去</li>
+<li>request.getSession().isNew();查看是否为新</li>
+</ul>
+<h3 id="webxml配置session最大不活动时间"><a href="#webxml配置session最大不活动时间" class="headerlink" title="webxml配置session最大不活动时间"></a>webxml配置session最大不活动时间</h3><ul>
+<li>设置最大时间<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sesssion-config</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>30<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">sesssion-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 
